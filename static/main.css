@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'TF2 Build';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TF2 Build'), url('font/tf2build.woff') format('woff');
+}
+
+body {
+    background-image: url('img/badlands.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    color: #fff;
+    font-family: 'TF2 Build', Arial, sans-serif;
+    font-size: 5em;
+    left: 0;
+    letter-spacing: 0.08em;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
