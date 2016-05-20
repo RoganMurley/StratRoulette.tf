@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Curse of the Lefty",
+        "desc": "Use left-handed viewmodels."
+    },
+    {
+        "name": "Valve Server",
+        "desc": "Everyone plays Sniper or Spy."
+    },
+    {
+        "name": "Seppuku",
+        "desc": "If your medic dies, killbind."
+    },
+    {
+        "name": "Snake",
+        "desc": "Unbind your strafe keys."
+    },
+    {
+        "name": "Straight Outta Degroot",
+        "desc": "You can only use Medieval loadouts."
+    },
+    {
+        "name": "Liquidation",
+        "desc": "Every time you die, delete an item."
+    }
+]

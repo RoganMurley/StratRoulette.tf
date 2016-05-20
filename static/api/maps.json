@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Badlands",
+        "map_name": "cp_badlands",
+        "available":
+            {
+                "sixes": true,
+                "hl": false,
+                "mm": true
+            }
+    }
+]
