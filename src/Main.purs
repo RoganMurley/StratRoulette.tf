@@ -11,7 +11,7 @@ import Prelude (($), (++), bind, Unit)
 
 main :: Eff (ajax :: AJAX, console :: CONSOLE, err :: EXCEPTION) Unit
 main = launchAff $ do
-    res1 <- get "./api/maps.json"
+    res1 <- get "./api/maps"
     liftEff $ log $ "GET /api response: " ++ res1.response
 
 
