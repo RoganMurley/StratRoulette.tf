@@ -22,5 +22,9 @@
     {
         "name": "Liquidation",
         "desc": "Every time you die, delete an item."
+    },
+    {
+        "name": "ster",
+        "desc": "Bind 's' to killbind."
     }
 ]
