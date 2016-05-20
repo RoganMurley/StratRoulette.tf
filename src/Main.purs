@@ -6,29 +6,23 @@ import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Class (liftEff)
 import Control.Monad.Eff.Console (CONSOLE, log)
 import Control.Monad.Eff.Exception (EXCEPTION)
+import Control.Monad.Eff.Random (randomInt, RANDOM)
+import Data.Array (index)
+import Data.Either.Unsafe (fromRight)
 import Data.Foreign (F)
 import Data.Foreign.Class (class IsForeign, readJSON, readProp)
 import Data.Foreign.Index (prop)
 import Network.HTTP.Affjax
-import Prelude (($), (++), (<>), (#), bind, pure, class Show, show, Unit)
+import Prelude (($), (<>), (#), bind, pure, class Show, show, Unit)
 
+main :: Eff (ajax :: AJAX, console :: CONSOLE, err :: EXCEPTION, random :: RANDOM) Unit
+main = launchAff do
+        res <- get "./api/strats"
+        n <- liftEff $ randomInt 0 6
+        liftEff $ log $ show $ index (stratsFromRes res.response) n
+    where
+        stratsFromRes res = fromRight (readJSON res :: F (Array Strat))
 
-main :: Eff (ajax :: AJAX, console :: CONSOLE, err :: EXCEPTION) Unit
-main = launchAff $ do
-    res1 <- get "./api/maps"
-    liftEff $ log $ "GET /api response: " ++ res1.response
-    liftEff $ log $ show $ readJSON
-        """
-            {
-                "name": "Badlands",
-                "map_name": "cp_badlands",
-                "available": {
-                    "sixes": true,
-                    "hl": false,
-                    "mm": true
-                }
-            }
-        """ :: F Map
 
 
 -- Maps.
