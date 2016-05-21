@@ -14,28 +14,36 @@ import Data.Either.Unsafe (fromRight)
 import Data.Foreign (F)
 import Data.Foreign.Class (readJSON)
 import Network.HTTP.Affjax (AJAX, get)
-import Prelude (($), (+), (++), bind, show, Unit)
+import Prelude (($), bind, pure, show, Unit)
 import Signal.Channel (CHANNEL)
-
 import Strat (Strat)
 
 
 main :: Eff (ajax :: AJAX, channel :: CHANNEL, console :: CONSOLE, dom :: DOM, err :: EXCEPTION, random :: RANDOM) Unit
 main = launchAff do
         res <- get "./api/strats"
-        n <- liftEff $ randomInt 0 6
-        liftEff $ log $ show $ index (stratsFromRes res.response) n
-        liftEff $ interface
+        -- n <- liftEff $ randomInt 0 6
+        -- liftEff $ log $ show $ index (stratsFromRes res.response) n
+        strats <- pure $ stratsFromRes res.response
+        liftEff $ interface strats
     where
         stratsFromRes res = fromRight (readJSON res :: F (Array Strat))
 
 
-interface :: forall e. Eff (channel :: CHANNEL, dom :: DOM | e) Unit
-interface = runFlareShow "controls" "output" counter
+interface :: forall e. Array Strat -> Eff (channel :: CHANNEL, dom :: DOM, random :: RANDOM | e) Unit
+interface strats = runFlareWith "controls_a" handler (intRange "numPoints" 1 100 10)
 
-counter :: forall a. UI a String
-counter = foldp (getValue) "a" (button "Roll" "" "a")
+
+handler :: forall e. Int -> Eff (channel :: CHANNEL, dom :: DOM, random :: RANDOM | e) Unit
+handler n = do
+    n <- randomInt 0 6
+    runFlareShow "controls_b" "output" (counter n)
+
+
+counter :: forall e. Int -> UI e String
+counter n = foldp (getValue) s (button "Roll" "" s)
+    where s = show n :: String
 
 
 getValue :: String -> String -> String
-getValue current prev = current
+getValue new _ = new
