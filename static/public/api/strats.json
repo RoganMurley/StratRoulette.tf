@@ -20,11 +20,15 @@
         "desc": "You can only use Medieval loadouts."
     },
     {
-        "name": "Depreciation",
-        "desc": "Every time you die, delete an item."
+        "name": "High Stakes Gameplay",
+        "desc": "Every time you die, delete a cosmetic."
     },
     {
         "name": "No Going Back",
         "desc": "Bind 's' to killbind."
+    },
+    {
+        "name": "W + M1",
+        "desc": "Everyone Pyro, everyone Phlog."
     }
 ]
