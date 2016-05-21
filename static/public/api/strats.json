@@ -1,34 +1,207 @@
 [
     {
         "name": "Curse of the Lefty",
-        "desc": "Use left-handed viewmodels."
+        "desc": "Use left-handed viewmodels.",
+        "tags": ["any_map", "viewmodel"]
     },
     {
         "name": "Valve Server",
-        "desc": "Everyone plays Sniper or Spy."
+        "desc": "Everyone plays Sniper or Spy.",
+        "tags": ["any_map", "sniper", "spy"]
     },
     {
         "name": "Seppuku",
-        "desc": "If your medic dies, killbind."
+        "desc": "If your medic dies, killbind.",
+        "tags": ["any_map", "killbind"]
     },
     {
-        "name": "Snake",
-        "desc": "Unbind your strafe keys."
+        "name": "Full Steam Ahead",
+        "desc": "Unbind your strafe keys.",
+        "tags": ["any_map", "unbind"]
+    },
+    {
+        "name": "Flawed",
+        "desc": "Unbind your jump key.",
+        "tags": ["any_map", "unbind"]
     },
     {
         "name": "Straight Outta Degroot",
-        "desc": "You can only use Medieval loadouts."
+        "desc": "You can only use Medieval loadouts.",
+        "tags": ["any_map", "loadout"]
     },
     {
         "name": "High Stakes Gameplay",
-        "desc": "Every time you die, delete a cosmetic."
+        "desc": "Every time you lose a control point, delete a cosmetic.",
+        "tags": ["any_map", "killbind"]
     },
     {
         "name": "No Going Back",
-        "desc": "Bind 's' to killbind."
+        "desc": "Bind 's' to killbind.",
+        "tags": ["any_map", "killbind"]
     },
     {
         "name": "W + M1",
-        "desc": "Everyone Pyro, everyone Phlog."
+        "desc": "Everyone Pyro, everyone Phlog.",
+        "tags": ["any_map", "pyro", "loadout"]
+    },
+    {
+        "name": "Badlands: Troll Toll",
+        "desc": "Hide under grey bridge instead of going to mid. Attack when they cross the bridge.",
+        "tags": ["cp_badlands", "hide", "rollout"]
+    },
+    {
+        "name": "Granary: Legitimate Strategy",
+        "desc": "One player commits suicide on rollout, everyone else hides in dropdown. Backcap when the other team goes to second, then backcap the whole map.",
+        "tags": ["cp_granary", "backcap", "hide", "dropdown", "rollout"]
+    },
+    {
+        "name": "Gullywash: Nightmare Fuel",
+        "desc": "Everyone Pyro, everyone Backburner, Detonator and Powerjack. Everyone detjump up dropdown on rollout.",
+        "tags": ["cp_gullywash_final1", "pyro", "loadout", "dropdown", "rollout"]
+    },
+    {
+        "name": "Facing Worlds",
+        "desc": "Everyone engineer. You can't use your weapons until you have a telefrag.",
+        "tags": ["any_map", "engineer", "teleporter"]
+    },
+    {
+        "name": "RNG",
+        "desc": "Random classes.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Fat Scouts",
+        "desc": "All heavy, all shotgun only.",
+        "tags": ["any_map", "heavy", "loadout"]
+    },
+    {
+        "name": "Quagmire",
+        "desc": "All Demoman, all Scottish Resistance, all Wee Booties.",
+        "tags": ["any_map", "demo", "loadout"]
+    },
+    {
+        "name": "Millenial",
+        "desc": "Assume the standing position.",
+        "tags": ["any_map", "irl"]
+    },
+    {
+        "name": "Weeb Medic",
+        "desc": "When healed, say \"Arigatou, Onii-chan!\".",
+        "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "The Worst",
+        "desc": "Ignore objectives. Spawncamp to victory.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "The Octopus",
+        "desc": "One Heavy, everyone else Medic. Medics must keep their beams on the Heavy at all times.",
+        "tags": ["any_map", "heavy", "medic"]
+    },
+    {
+        "name": "Politeness",
+        "desc": "Say \"Exemplary\" every time a team-mate gets a kill.",
+        "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "Guide Dogs",
+        "desc": "Medics must play with their monitors turned off, and be guided by the team.",
+        "tags": ["any_map", "mic", "irl"]
+    },
+    {
+        "name": "TFC",
+        "desc": "Everyone Sniper, everyone The Classic.",
+        "tags": ["any_map", "Sniper", "loadout"]
+    },
+    {
+        "name": "Rules of Engagement",
+        "desc": "No hurting medics unless they engage in battle.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Ruse",
+        "desc": "Everyone Spy, disguised as friendly classes. Keep up the ruse as long as you can.",
+        "tags": ["any_map", "spy"]
+    },
+    {
+        "name": "The Blob",
+        "desc": "Everyone must stay touching at all times.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "FaZe Clan",
+        "desc": "Everyone Sniper, noscopes only. Scream \"Oooooooh!\" and play airhorns after every kill.",
+        "tags": ["any_map", "sniper", "mic"]
+    },
+    {
+        "name": "The Turtle",
+        "desc": "Everyone Engineer. Stay last and never leave.",
+        "tags": ["any_map", "engineer"]
+    },
+    {
+        "name": "Vomit Comet",
+        "desc": "Max DPI, sensitivity 6.",
+        "tags": ["any_map", "mouse"]
+    },
+    {
+        "name": "Red Light, Green Light",
+        "desc": "One player calls red light and green light. This determines the rest of the player's ability to move.",
+        "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "Kill Confirmed",
+        "desc": "Whenever you get a kill, type \"KILL CONFIRMED\" into chat.",
+        "tags": ["any_map", "chat"]
+    },
+    {
+        "name": "The Slowpoke",
+        "desc": "Sensitivity 0.1.",
+        "tags": ["any_map", "mouse"]
+    },
+    {
+        "name": "Roger That",
+        "desc": "Communicate as is using a radio, for example saying \"Tango Down!\" and \"Target Spotted\". End anything you say with \"Over\".",
+        "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "LEEEEEEEEROY",
+        "desc": "Everyone line up at a choke point. Shout \"LEEEEEEEEROY JEEEEEEEEEEEENNNNNKKKIIIINS!\" and charge into battle.",
+        "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "The 360",
+        "desc": "Spin 360 degrees before shooting.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "The Legit 360",
+        "desc": "Spin 360 degrees in real life before shooting.",
+        "tags": ["any_map", "irl"]
+    },
+    {
+        "name": "Simon Says",
+        "desc": "The player with the highest score is Simon. Players must follow simon and do what he says",
+        "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "GIT GUD",
+        "desc": "Every time you kill someone, say \"GIT GUD GET LMAOBOX\" in chat.",
+        "tags": ["any_map", "chat"]
+    },
+    {
+        "name": "I am Heavy Weapons Guy",
+        "desc": "Everyone Heavy. Never unrev your gun.",
+        "tags": ["any_map", "heavy"]
+    },
+    {
+        "name": "Swarm of Bees",
+        "desc": "Everyone Scout, eveyone Bat. Everyone must move in a group while constantly attacking, and making buzzing noises over mic.",
+        "tags": ["any_map", "scout", "loadout", "mic"]
+    },
+    {
+        "name": "Blind Man's Bluff",
+        "desc": "One player must turn off their monitor, and rollout with the other player's help.",
+        "tags": ["any_map", "irl", "mic", "rollout"]
     }
 ]
