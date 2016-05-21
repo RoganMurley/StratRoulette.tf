@@ -1,11 +1,9 @@
 module Strat where
 
 
-import Prelude (($), (<>), (#), bind, pure, class Show, show)
-
-import Control.Bind ((>=>))
 import Data.Foreign.Class (class IsForeign, readProp)
 import Data.Foreign.Index (prop)
+import Prelude (($), (<>), (#), bind, pure, class Show, show)
 
 
 data Strat = Strat { name :: String, desc :: String }
@@ -19,3 +17,6 @@ instance stratIsForeign :: IsForeign Strat where
     name <- readProp "name" value
     desc <- readProp "desc" value
     pure $ Strat { name: name, desc: desc }
+
+getDesc :: Strat -> String
+getDesc (Strat o) = o.desc

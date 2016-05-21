@@ -2,8 +2,8 @@ module Main where
 
 
 import Flare
--- import Flare.Smolder (runFlareHTML)
--- import Text.Smolder.Markup as H
+import Flare.Smolder (runFlareHTML)
+import Text.Smolder.Markup as H
 
 import Control.Monad.Aff (launchAff)
 import Control.Monad.Eff (Eff)
@@ -18,9 +18,9 @@ import Data.Foreign (F)
 import Data.Foreign.Class (readJSON)
 import Data.Maybe.Unsafe (fromJust)
 import Network.HTTP.Affjax (AJAX, get)
-import Prelude (($), (-), bind, pure, show, Unit)
+import Prelude (($), (-), bind, pure, Unit)
 import Signal.Channel (CHANNEL)
-import Strat (Strat)
+import Strat (getDesc, Strat)
 
 
 main :: Eff (ajax :: AJAX, channel :: CHANNEL, console :: CONSOLE, dom :: DOM, err :: EXCEPTION, random :: RANDOM) Unit
@@ -42,11 +42,11 @@ interface strats = runFlareWith
 handler :: forall e. Array Strat -> Boolean -> Eff (dom :: DOM, channel :: CHANNEL, random :: RANDOM | e) Unit
 handler strats b = do
     n <- randomInt 0 ((length strats) - 1)
-    runFlareShow "null" "output" (pure $ roll strats n b)
-
-
-roll :: Array Strat -> Int -> Boolean -> String
-roll _      _ false  = ""
-roll strats i true = show strat
+    runFlareHTML "null" "output" $ pure $ roll strats n b
     where
-        strat = fromJust $ index strats i
+        getValue now past = now
+
+
+roll :: Array Strat -> Int -> Boolean -> H.Markup
+roll _      _ false = H.text ""
+roll strats i true  = H.text $ getDesc $ fromJust (index strats i)

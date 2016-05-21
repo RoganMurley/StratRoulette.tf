@@ -27,6 +27,7 @@ body {
     display: table;
     position: absolute;
     height: 100%;
+    margin-top: -40px;
     width: 100%;
 }
 
@@ -48,7 +49,7 @@ h1 {
     font-size: 5em;
     left: 0;
     letter-spacing: 0.08em;
-
+    margin-bottom: 20px;
 }
 
 #output {
