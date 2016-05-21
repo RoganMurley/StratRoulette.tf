@@ -2,7 +2,6 @@ module Strat where
 
 
 import Data.Foreign.Class (class IsForeign, readProp)
-import Data.Foreign.Index (prop)
 import Prelude (($), (<>), (#), bind, pure, class Show, show)
 
 
@@ -20,3 +19,6 @@ instance stratIsForeign :: IsForeign Strat where
 
 getDesc :: Strat -> String
 getDesc (Strat o) = o.desc
+
+getName :: Strat -> String
+getName (Strat o) = o.name

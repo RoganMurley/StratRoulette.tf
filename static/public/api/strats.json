@@ -20,11 +20,11 @@
         "desc": "You can only use Medieval loadouts."
     },
     {
-        "name": "Liquidation",
+        "name": "Depreciation",
         "desc": "Every time you die, delete an item."
     },
     {
-        "name": "ster",
+        "name": "No Going Back",
         "desc": "Bind 's' to killbind."
     }
 ]

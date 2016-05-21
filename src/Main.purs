@@ -1,10 +1,5 @@
 module Main where
 
-
-import Flare
-import Flare.Smolder (runFlareHTML)
-import Text.Smolder.Markup as H
-
 import Control.Monad.Aff (launchAff)
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Class (liftEff)
@@ -18,9 +13,14 @@ import Data.Foreign (F)
 import Data.Foreign.Class (readJSON)
 import Data.Maybe.Unsafe (fromJust)
 import Network.HTTP.Affjax (AJAX, get)
+import Flare
+import Flare.Smolder (runFlareHTML)
 import Prelude (($), (-), bind, pure, Unit)
 import Signal.Channel (CHANNEL)
-import Strat (getDesc, Strat)
+import Text.Smolder.HTML (h1)
+import Text.Smolder.Markup (Markup, text)
+
+import Strat (getDesc, getName, Strat)
 
 
 main :: Eff (ajax :: AJAX, channel :: CHANNEL, console :: CONSOLE, dom :: DOM, err :: EXCEPTION, random :: RANDOM) Unit
@@ -47,6 +47,10 @@ handler strats b = do
         getValue now past = now
 
 
-roll :: Array Strat -> Int -> Boolean -> H.Markup
-roll _      _ false = H.text ""
-roll strats i true  = H.text $ getDesc $ fromJust (index strats i)
+roll :: Array Strat -> Int -> Boolean -> Markup
+roll _      _ false = text ""
+roll strats i true  = do
+    h1 $ text $ getName strat
+    text $ getDesc strat
+    where
+        strat = fromJust (index strats i)
