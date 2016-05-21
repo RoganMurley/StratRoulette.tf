@@ -16,6 +16,7 @@ import Data.Array (index, length)
 import Data.Either.Unsafe (fromRight)
 import Data.Foreign (F)
 import Data.Foreign.Class (readJSON)
+import Data.Maybe.Unsafe (fromJust)
 import Network.HTTP.Affjax (AJAX, get)
 import Prelude (($), (-), bind, pure, show, Unit)
 import Signal.Channel (CHANNEL)
@@ -41,11 +42,11 @@ interface strats = runFlareWith
 handler :: forall e. Array Strat -> Boolean -> Eff (dom :: DOM, channel :: CHANNEL, random :: RANDOM | e) Unit
 handler strats b = do
     n <- randomInt 0 ((length strats) - 1)
-    runFlareShow "controls_b" "output" (pure $ roll strats n b)
+    runFlareShow "null" "output" (pure $ roll strats n b)
 
 
 roll :: Array Strat -> Int -> Boolean -> String
 roll _      _ false  = ""
 roll strats i true = show strat
     where
-        strat = index strats i
+        strat = fromJust $ index strats i

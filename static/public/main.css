@@ -10,6 +10,36 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    overflow: hidden;
+}
+
+.landing {
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
 }
 
 h1 {
@@ -18,11 +48,24 @@ h1 {
     font-size: 5em;
     left: 0;
     letter-spacing: 0.08em;
-    line-height: 200px;
-    margin: auto;
-    margin-top: -100px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%;
+
+}
+
+#output {
+    color: #fff;
+    font-family: 'TF2 Build', Arial, sans-serif;
+    font-size: 2em;
+}
+
+.flare-input-button {
+    color: #cf6a32;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-family: 'TF2 Build', Arial, sans-serif;
+    font-size: 2em;
+    margin-top: 30px;
+    vertical-align: middle;
+}
+
+.flare-input-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
