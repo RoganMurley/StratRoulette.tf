@@ -33,22 +33,6 @@ var PS = {};
     };
   };
 
-  //- Semiring -------------------------------------------------------------------
-
-  exports.intAdd = function (x) {
-    return function (y) {
-      /* jshint bitwise: false */
-      return x + y | 0;
-    };
-  };
-
-  exports.intMul = function (x) {
-    return function (y) {
-      /* jshint bitwise: false */
-      return x * y | 0;
-    };
-  };
-
   //- Eq -------------------------------------------------------------------------
 
   exports.refEq = function (r1) {
@@ -178,12 +162,6 @@ var PS = {};
   var Semigroup = function (append) {
       this.append = append;
   };
-  var Semiring = function (add, mul, one, zero) {
-      this.add = add;
-      this.mul = mul;
-      this.one = one;
-      this.zero = zero;
-  };
   var Eq = function (eq) {
       this.eq = eq;
   };
@@ -204,9 +182,6 @@ var PS = {};
   var Show = function (show) {
       this.show = show;
   };
-  var zero = function (dict) {
-      return dict.zero;
-  };
   var unsafeCompare = $foreign.unsafeCompareImpl(LT.value)(EQ.value)(GT.value);
   var unit = {};
   var top = function (dict) {
@@ -216,8 +191,7 @@ var PS = {};
   var showInt = new Show($foreign.showIntImpl);
   var show = function (dict) {
       return dict.show;
-  };                                                                            
-  var semiringInt = new Semiring($foreign.intAdd, $foreign.intMul, 1, 0);
+  };                                                                     
   var semigroupoidFn = new Semigroupoid(function (f) {
       return function (g) {
           return function (x) {
@@ -234,14 +208,8 @@ var PS = {};
       return pure(dictApplicative);
   };
   var otherwise = true;
-  var one = function (dict) {
-      return dict.one;
-  };
   var not = function (dict) {
       return dict.not;
-  };
-  var mul = function (dict) {
-      return dict.mul;
   };
   var map = function (dict) {
       return dict.map;
@@ -360,12 +328,6 @@ var PS = {};
               });
           };
       };
-  }; 
-  var add = function (dict) {
-      return dict.add;
-  };
-  var $plus = function (dictSemiring) {
-      return add(dictSemiring);
   };
   exports["LT"] = LT;
   exports["GT"] = GT;
@@ -375,7 +337,6 @@ var PS = {};
   exports["Bounded"] = Bounded;
   exports["Ord"] = Ord;
   exports["Eq"] = Eq;
-  exports["Semiring"] = Semiring;
   exports["Semigroup"] = Semigroup;
   exports["Monad"] = Monad;
   exports["Bind"] = Bind;
@@ -396,11 +357,6 @@ var PS = {};
   exports["compare"] = compare;
   exports["=="] = $eq$eq;
   exports["eq"] = eq;
-  exports["+"] = $plus;
-  exports["one"] = one;
-  exports["mul"] = mul;
-  exports["zero"] = zero;
-  exports["add"] = add;
   exports["++"] = $plus$plus;
   exports["<>"] = $less$greater;
   exports["append"] = append;
@@ -425,7 +381,6 @@ var PS = {};
   exports["functorArray"] = functorArray;
   exports["semigroupString"] = semigroupString;
   exports["semigroupArray"] = semigroupArray;
-  exports["semiringInt"] = semiringInt;
   exports["eqString"] = eqString;
   exports["ordString"] = ordString;
   exports["boundedBoolean"] = boundedBoolean;
@@ -1325,10 +1280,7 @@ var PS = {};
   var Data_Int_Bits = PS["Data.Int.Bits"];
   var Data_Maybe = PS["Data.Maybe"];
   var Data_Maybe_Unsafe = PS["Data.Maybe.Unsafe"];
-  var $$Math = PS["Math"];        
-  var odd = function (x) {
-      return (x & 1) !== 0;
-  };                                                                                         
+  var $$Math = PS["Math"];                                                                   
   var fromNumber = $foreign.fromNumberImpl(Data_Maybe.Just.create)(Data_Maybe.Nothing.value);
   var unsafeClamp = function (x) {
       if (x >= $foreign.toNumber(Prelude.top(Prelude.boundedInt))) {
@@ -1345,7 +1297,6 @@ var PS = {};
   var floor = function ($2) {
       return unsafeClamp($$Math.floor($2));
   };
-  exports["odd"] = odd;
   exports["floor"] = floor;
   exports["fromNumber"] = fromNumber;
   exports["toNumber"] = $foreign.toNumber;
@@ -2880,20 +2831,6 @@ var PS = {};
     };
   };
 
-  exports.foldp = function(fun) {
-    return function(seed) {
-      return function(sig) {
-        var acc = seed;
-        var out = make(acc);
-        sig.subscribe(function(val) {
-          acc = fun(val)(acc);
-          out.set(acc);
-        });
-        return out;
-      };
-    };
-  };
-
   exports.runSignal =
     function runSignal(sig) {
       return function() {
@@ -2924,7 +2861,6 @@ var PS = {};
   exports["applySignal"] = applySignal;
   exports["applicativeSignal"] = applicativeSignal;
   exports["runSignal"] = $foreign.runSignal;
-  exports["foldp"] = $foreign.foldp;
   exports["constant"] = $foreign.constant;
 })(PS["Signal"] = PS["Signal"] || {});
 (function(exports) {// module Signal.Channel
@@ -3014,14 +2950,6 @@ var PS = {};
           return runFlareWith(controls)($foreign.renderString(target));
       };
   };
-  var liftSF = function (f) {
-      return function (v) {
-          return function __do() {
-              var v1 = v();
-              return new Flare(v1.value0, f(v1.value1));
-          };
-      };
-  };
   var functorFlare = new Prelude.Functor(function (f) {
       return function (v) {
           return new Flare(v.value0, Prelude.map(Signal.functorSignal)(f)(v.value1));
@@ -3032,11 +2960,6 @@ var PS = {};
           return UI(Prelude.map(Control_Monad_Eff.functorEff)(Prelude.map(functorFlare)(f))(v));
       };
   });
-  var foldp = function (f) {
-      return function (x0) {
-          return liftSF(Signal.foldp(f)(x0));
-      };
-  };
   var createUI = function (createComp) {
       return function (label) {
           return function ($$default) {
@@ -3082,8 +3005,6 @@ var PS = {};
   });
   exports["runFlare"] = runFlare;
   exports["runFlareWith"] = runFlareWith;
-  exports["foldp"] = foldp;
-  exports["liftSF"] = liftSF;
   exports["button"] = button;
   exports["functorFlare"] = functorFlare;
   exports["applyFlare"] = applyFlare;
@@ -3836,7 +3757,6 @@ var PS = {};
   var Data_Either_Unsafe = PS["Data.Either.Unsafe"];
   var Data_Foreign = PS["Data.Foreign"];
   var Data_Foreign_Class = PS["Data.Foreign.Class"];
-  var Data_Int = PS["Data.Int"];
   var Data_Maybe_Unsafe = PS["Data.Maybe.Unsafe"];
   var Network_HTTP_Affjax = PS["Network.HTTP.Affjax"];
   var Flare = PS["Flare"];
@@ -3849,37 +3769,28 @@ var PS = {};
   var Network_HTTP_Affjax_Response = PS["Network.HTTP.Affjax.Response"];        
   var roll = function (strats) {
       return function (i) {
-          return function (n) {
-              if (n < 3) {
-                  return Prelude.bind(Text_Smolder_Markup.bindMarkupM)(Text_Smolder_HTML.h1(Text_Smolder_Markup.text("Strat Roulette")))(function () {
-                      return Text_Smolder_Markup.text("Version 0.1.0");
-                  });
-              };
-              if (Data_Int.odd(n)) {
-                  var strat = Data_Maybe_Unsafe.fromJust(Data_Array.index(strats)(i));
-                  return Prelude.bind(Text_Smolder_Markup.bindMarkupM)(Text_Smolder_HTML.h1(Text_Smolder_Markup.text(Strat.getName(strat))))(function () {
-                      return Text_Smolder_Markup.text(Strat.getDesc(strat));
-                  });
-              };
-              if (Prelude.otherwise) {
-                  return Prelude.bind(Text_Smolder_Markup.bindMarkupM)(Text_Smolder_HTML.h1(Text_Smolder_Markup.text("Rolling...")))(function () {
-                      return Text_Smolder_Markup.text("please wait");
-                  });
-              };
-              throw new Error("Failed pattern match at Main line 50, column 1 - line 61, column 16: " + [ strats.constructor.name, i.constructor.name, n.constructor.name ]);
-          };
+          var strat = Data_Maybe_Unsafe.fromJust(Data_Array.index(strats)(i));
+          return Prelude.bind(Text_Smolder_Markup.bindMarkupM)(Text_Smolder_HTML.h1(Text_Smolder_Markup.text(Strat.getName(strat))))(function () {
+              return Text_Smolder_Markup.text(Strat.getDesc(strat));
+          });
       };
   };
   var handler = function (strats) {
-      return function (n) {
+      return function (b) {
           return function __do() {
               var v = Control_Monad_Eff_Random.randomInt(0)(Data_Array.length(strats) - 1)();
-              return Flare_Smolder.runFlareHTML("null")("output")(Prelude.pure(Flare.applicativeUI)(roll(strats)(v)(n)))();
+              if (b) {
+                  return Flare_Smolder.runFlareHTML("null")("output")(Prelude.pure(Flare.applicativeUI)(roll(strats)(v)))();
+              };
+              if (!b) {
+                  return Prelude.unit;
+              };
+              throw new Error("Failed pattern match at Main line 45, column 5 - line 50, column 1: " + [ b.constructor.name ]);
           };
       };
   };
   var $$interface = function (strats) {
-      return Flare.runFlareWith("controls")(handler(strats))(Flare.foldp(Prelude["+"](Prelude.semiringInt))(0)(Flare.button("Roll")(1)(1)));
+      return Flare.runFlareWith("controls")(handler(strats))(Flare.button("Roll")(false)(true));
   };
   var main = (function () {
       var stratsFromRes = function (res) {
