@@ -19,22 +19,6 @@ var PS = {};
     };
   };
 
-  //- Semiring -------------------------------------------------------------------
-
-  exports.intAdd = function (x) {
-    return function (y) {
-      /* jshint bitwise: false */
-      return x + y | 0;
-    };
-  };
-
-  exports.intMul = function (x) {
-    return function (y) {
-      /* jshint bitwise: false */
-      return x * y | 0;
-    };
-  };
-
   //- Eq -------------------------------------------------------------------------
 
   exports.refEq = function (r1) {
@@ -129,12 +113,6 @@ var PS = {};
   var Semigroup = function (append) {
       this.append = append;
   };
-  var Semiring = function (add, mul, one, zero) {
-      this.add = add;
-      this.mul = mul;
-      this.one = one;
-      this.zero = zero;
-  };
   var Eq = function (eq) {
       this.eq = eq;
   };
@@ -150,9 +128,6 @@ var PS = {};
   };
   var Show = function (show) {
       this.show = show;
-  };
-  var zero = function (dict) {
-      return dict.zero;
   };                                                                           
   var unit = {};
   var top = function (dict) {
@@ -162,8 +137,7 @@ var PS = {};
   var showInt = new Show($foreign.showIntImpl);
   var show = function (dict) {
       return dict.show;
-  };                                                                            
-  var semiringInt = new Semiring($foreign.intAdd, $foreign.intMul, 1, 0);
+  };                                                                     
   var semigroupoidFn = new Semigroupoid(function (f) {
       return function (g) {
           return function (x) {
@@ -178,14 +152,8 @@ var PS = {};
       return pure(dictApplicative);
   };
   var otherwise = true;
-  var one = function (dict) {
-      return dict.one;
-  };
   var not = function (dict) {
       return dict.not;
-  };
-  var mul = function (dict) {
-      return dict.mul;
   };
   var map = function (dict) {
       return dict.map;
@@ -270,18 +238,11 @@ var PS = {};
               });
           };
       };
-  }; 
-  var add = function (dict) {
-      return dict.add;
-  };
-  var $plus = function (dictSemiring) {
-      return add(dictSemiring);
   };
   exports["Show"] = Show;
   exports["BooleanAlgebra"] = BooleanAlgebra;
   exports["Bounded"] = Bounded;
   exports["Eq"] = Eq;
-  exports["Semiring"] = Semiring;
   exports["Semigroup"] = Semigroup;
   exports["Monad"] = Monad;
   exports["Bind"] = Bind;
@@ -297,11 +258,6 @@ var PS = {};
   exports["bottom"] = bottom;
   exports["top"] = top;
   exports["eq"] = eq;
-  exports["+"] = $plus;
-  exports["one"] = one;
-  exports["mul"] = mul;
-  exports["zero"] = zero;
-  exports["add"] = add;
   exports["<>"] = $less$greater;
   exports["append"] = append;
   exports["ap"] = ap;
@@ -322,7 +278,6 @@ var PS = {};
   exports["semigroupoidFn"] = semigroupoidFn;
   exports["categoryFn"] = categoryFn;
   exports["functorArray"] = functorArray;
-  exports["semiringInt"] = semiringInt;
   exports["eqString"] = eqString;
   exports["boundedBoolean"] = boundedBoolean;
   exports["boundedInt"] = boundedInt;
@@ -2777,8 +2732,13 @@ var PS = {};
   var Strat = PS["Strat"];
   var Network_HTTP_Affjax_Response = PS["Network.HTTP.Affjax.Response"];
   var Data_Maybe = PS["Data.Maybe"];        
-  var counter = Flare.foldp(Prelude["+"](Prelude.semiringInt))(0)(Flare.button("Increment")(0)(1));
-  var $$interface = Flare.runFlareShow(Prelude.showInt)("controls")("output")(counter);
+  var getValue = function (current) {
+      return function (prev) {
+          return current;
+      };
+  };
+  var counter = Flare.foldp(getValue)("a")(Flare.button("Roll")("")("a"));
+  var $$interface = Flare.runFlareShow(Prelude.showString)("controls")("output")(counter);
   var main = (function () {
       var stratsFromRes = function (res) {
           return Data_Either_Unsafe.fromRight(Data_Foreign_Class.readJSON(Data_Foreign_Class.arrayIsForeign(Strat.stratIsForeign))(res));
@@ -2791,6 +2751,7 @@ var PS = {};
           });
       }));
   })();
+  exports["getValue"] = getValue;
   exports["counter"] = counter;
   exports["interface"] = $$interface;
   exports["main"] = main;

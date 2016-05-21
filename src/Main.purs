@@ -14,7 +14,7 @@ import Data.Either.Unsafe (fromRight)
 import Data.Foreign (F)
 import Data.Foreign.Class (readJSON)
 import Network.HTTP.Affjax (AJAX, get)
-import Prelude (($), (+), bind, show, Unit)
+import Prelude (($), (+), (++), bind, show, Unit)
 import Signal.Channel (CHANNEL)
 
 import Strat (Strat)
@@ -33,5 +33,9 @@ main = launchAff do
 interface :: forall e. Eff (channel :: CHANNEL, dom :: DOM | e) Unit
 interface = runFlareShow "controls" "output" counter
 
-counter :: forall a. UI a Int
-counter = foldp (+) 0 (button "Increment" 0 1)
+counter :: forall a. UI a String
+counter = foldp (getValue) "a" (button "Roll" "" "a")
+
+
+getValue :: String -> String -> String
+getValue current prev = current
