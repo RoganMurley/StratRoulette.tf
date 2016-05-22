@@ -2,7 +2,7 @@ module Strat where
 
 
 import Data.Foreign.Class (class IsForeign, readProp)
-import Prelude (($), (<>), (#), bind, pure, class Show, show)
+import Prelude (($), (<>), bind, pure, class Show, show)
 
 
 data Strat = Strat { name :: String, desc :: String }

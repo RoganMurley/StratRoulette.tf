@@ -88,6 +88,12 @@ h1 {
     font-weight: normal;
 }
 
+.sharing {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+}
+
 #fixed-div {
     position: fixed;
     top: 1em;
