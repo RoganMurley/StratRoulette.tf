@@ -50,7 +50,7 @@
         "tags": ["cp_badlands", "hide", "rollout"]
     },
     {
-        "name": "Granary: Legitimate Strategy",
+        "name": "Granary: Backappa",
         "desc": "One player commits suicide on rollout, everyone else hides in dropdown. Backcap when the other team goes to second, then backcap the whole map.",
         "tags": ["cp_granary", "backcap", "hide", "dropdown", "rollout"]
     },
@@ -75,7 +75,7 @@
         "tags": ["any_map", "heavy", "loadout"]
     },
     {
-        "name": "Quagmire",
+        "name": "Minefield",
         "desc": "All Demoman, all Scottish Resistance, all Wee Booties.",
         "tags": ["any_map", "demo", "loadout"]
     },
@@ -161,7 +161,7 @@
     },
     {
         "name": "Roger That",
-        "desc": "Communicate as is using a radio, for example saying \"Tango Down!\" and \"Target Spotted\". End anything you say with \"Over\".",
+        "desc": "Communicate as if using a radio, for example saying \"Tango Down!\" or \"Target Spotted\". End anything you say with \"Over\".",
         "tags": ["any_map", "mic"]
     },
     {
@@ -203,5 +203,15 @@
         "name": "Blind Man's Bluff",
         "desc": "One player must turn off their monitor, and rollout with the other player's help.",
         "tags": ["any_map", "irl", "mic", "rollout"]
+    },
+    {
+        "name": "Gladiator",
+        "desc": "Only one player can leave spawn at a time.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Winter",
+        "desc": "Everyone Demoman or Soldier, Jumper weapons and melee only.",
+        "tags": ["any_map", "loadout", "soldier", "demo"]
     }
 ]
