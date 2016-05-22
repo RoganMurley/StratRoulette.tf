@@ -196,7 +196,7 @@
     },
     {
         "name": "Swarm of Bees",
-        "desc": "Everyone Scout, eveyone Bat. Everyone must move in a group while constantly attacking, and making buzzing noises over mic.",
+        "desc": "Everyone Scout, everyone Bat. Everyone must move in a group while constantly attacking, and making buzzing noises over mic.",
         "tags": ["any_map", "scout", "loadout", "mic"]
     },
     {
@@ -213,5 +213,10 @@
         "name": "Winter",
         "desc": "Everyone Demoman or Soldier, Jumper weapons and melee only.",
         "tags": ["any_map", "loadout", "soldier", "demo"]
+    },
+    {
+        "name": "Permission",
+        "desc": "You must ask before you take a healthpack. Players must say \"Permission Granted\" or \"Permission Denied\" in response.",
+        "tags": ["any_map", "mic"]
     }
 ]
