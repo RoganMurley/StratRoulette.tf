@@ -51,7 +51,7 @@
     },
     {
         "name": "Granary: Backappa",
-        "desc": "One player commits suicide on rollout, everyone else hides in dropdown. Backcap when the other team goes to second, then backcap the whole map.",
+        "desc": "Everyone hide in dropdown. When the enemy team walks past, backcap to victory..",
         "tags": ["cp_granary", "backcap", "hide", "dropdown", "rollout"]
     },
     {

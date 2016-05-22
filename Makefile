@@ -1,5 +1,5 @@
 all:
 	pulp build --to static/public/main.js
 
-upload:
+deploy:
 	appcfg.py update static
