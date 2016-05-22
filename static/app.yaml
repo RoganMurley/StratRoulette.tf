@@ -7,14 +7,17 @@
   handlers:
 
   - url: /favicon.ico
+    secure: always
     static_files: public/img/favicon.ico
     upload: public/img/favicon.ico
 
   - url: /(.+)
+    secure: always
     static_files: public/\1
     upload: public/(.*)
 
   - url: /
+    secure: always
     static_files: public/index.html
     upload: public/index.html
 
