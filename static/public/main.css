@@ -53,7 +53,10 @@ h1 {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-family: 'TF2 Build', Arial, sans-serif;
     font-size: 2em;
+    font-weight: bold;
     margin-top: 30px;
+    letter-spacing: 0.04em;
+    padding-top: 6px;
     vertical-align: middle;
 }
 
@@ -61,16 +64,27 @@ h1 {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.flare-input-button:active {
+    font-weight: normal;
+}
+
 .suggest-button {
-    color: #cf6a32;
+    color: #776459;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-family: 'TF2 Build', Arial, sans-serif;
     font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    padding-top: 4px;
     vertical-align: middle;
 }
 
 .suggest-button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.suggest-button:active {
+    font-weight: normal;
 }
 
 #fixed-div {
