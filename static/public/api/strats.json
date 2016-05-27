@@ -45,21 +45,6 @@
         "tags": ["any_map", "pyro", "loadout"]
     },
     {
-        "name": "Badlands: Troll Toll",
-        "desc": "Hide under grey bridge instead of going to mid. Attack when they cross the bridge.",
-        "tags": ["cp_badlands", "hide", "rollout"]
-    },
-    {
-        "name": "Granary: Backappa",
-        "desc": "Everyone hide in dropdown. When the enemy team walks past, backcap to victory..",
-        "tags": ["cp_granary", "backcap", "hide", "dropdown", "rollout"]
-    },
-    {
-        "name": "Gullywash: Nightmare Fuel",
-        "desc": "Everyone Pyro, everyone Backburner, Detonator and Powerjack. Everyone detjump up dropdown on rollout.",
-        "tags": ["cp_gullywash_final1", "pyro", "loadout", "dropdown", "rollout"]
-    },
-    {
         "name": "Facing Worlds",
         "desc": "Everyone engineer. You can't use your weapons until you have a telefrag.",
         "tags": ["any_map", "engineer", "teleporter"]
