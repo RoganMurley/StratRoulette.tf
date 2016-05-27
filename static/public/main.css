@@ -5,6 +5,24 @@
     src: local('TF2 Build'), url('font/tf2build.woff') format('woff');
 }
 
+html{
+	/* This image will be displayed fullscreen */
+	background:url('img/badlands.jpg') no-repeat center center;
+
+	/* Ensure the html element always takes up the full height of the browser window */
+	min-height:100%;
+
+	/* The Magic */
+	background-size:cover;
+}
+
+body{
+	/* Workaround for some mobile browsers */
+	min-height:100%;
+    overflow: hidden;
+}
+
+/*
 body {
     background-image: url('img/badlands.jpg');
     background-repeat: no-repeat;
@@ -12,6 +30,7 @@ body {
     background-position: center;
     overflow: hidden;
 }
+*/
 
 .outer {
     display: table;
