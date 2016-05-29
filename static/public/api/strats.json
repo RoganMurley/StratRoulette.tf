@@ -65,8 +65,8 @@
         "tags": ["any_map", "demo", "loadout"]
     },
     {
-        "name": "Millenial",
-        "desc": "Assume the standing position.",
+        "name": "To Attention",
+        "desc": "Stand up while playing.",
         "tags": ["any_map", "irl"]
     },
     {
@@ -203,5 +203,225 @@
         "name": "Permission",
         "desc": "You must ask before you take a healthpack. Players must say \"Permission Granted\" or \"Permission Denied\" in response.",
         "tags": ["any_map", "mic"]
+    },
+    {
+        "name": "Sorry, Ears",
+        "desc": "Everyone Scout, Frying Pans only.",
+        "tags": ["any_map", "loadout", "scout"]
+    },
+    {
+        "name": "Blood Price",
+        "desc": "Everyone Scout, Boston Basher only.",
+        "tags": ["any_map", "loadout", "scout"]
+    },
+    {
+        "name": "G'day!",
+        "desc": "Everyone Sniper. Never aim for the head, and taunt after every kill.",
+        "tags": ["any_map", "sniper"]
+    },
+    {
+        "name": "Bandit",
+        "desc": "Play with only one hand.",
+        "tags": ["any_map", "irl"]
+    },
+    {
+        "name": "W + M2",
+        "desc": "Everyone Pyro. Only yes the airblast.",
+        "tags": ["any_map", "pyro"]
+    },
+    {
+        "name": "Holiday Horror",
+        "desc": "Everyone Heavy. Punch enemies in the back, then try to get taunt kills.",
+        "tags": ["any_map", "loadout", "heavy"]
+    },
+    {
+        "name": "The Muselk",
+        "desc": "Only use loadouts in Muselk's top 10 loadout videos.",
+        "tags": ["any_map", "loadout"]
+    },
+    {
+        "name": "Kept you waiting, huh?",
+        "desc": "Instead of cloaking, use the Box Trot.",
+        "tags": ["any_map", "spy"]
+    },
+    {
+        "name": "Schadenfreude",
+        "desc": "Change your medic button to a killbind.",
+        "tags": ["any_map", "killbind"]
+    },
+    {
+        "name": "Slow Scout",
+        "desc": "Everyone Scout. Bind moving forward to mwheel up and backward to mwheel down. Move using the mouse wheel.",
+        "tags": ["any_map", "scout", "bind"]
+    },
+    {
+        "name": "High Value Target",
+        "desc": "Randomly choose one opponent. Your team must relentlessly focus them, and taunt upon killing them.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "MvM Scout",
+        "desc": "Everyone Scout. Use Fan-of-War and Mad Milk only.",
+        "tags": ["any_map", "scout", "loadout"]
+    },
+    {
+        "name": "Cheap Trading",
+        "desc": "Pick up any weapons you see.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Aspiring Scout",
+        "desc": "Everyone Engineer. No building.",
+        "tags": ["any_map", "engineer"]
+    },
+    {
+        "name": "Reverso",
+        "desc": "Reverse your control bindings (forward = backwards, jump = crouch e.t.c.).",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Undercover",
+        "desc": "Wear typical F2P loadouts.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Vice-Prez",
+        "desc": "One Soldier, everyone else Heavy. Soldier spends the round whipping the Heavies.",
+        "tags": ["any_map", "soldier", "heavy", "loadout"]
+    },
+    {
+        "name": "Baby Steps",
+        "desc": "Everyone Sniper, everyone The Classic. Constantly charge your shots.",
+        "tags": ["any_map", "sniper", "loadout"]
+    },
+    {
+        "name": "Spy Scout",
+        "desc": "Everyone Scout. Only use Bonk and Backscatter.",
+        "tags": ["any_map", "scout", "loadout"]
+    },
+    {
+        "name": "Death from Above",
+        "desc": "Everyone Soldier, use Airstrike and B.A.S.E. Jumper.",
+        "tags": ["any_map", "soldier", "loadout"]
+    },
+    {
+        "name": "TF:GO",
+        "desc": "Everyone Sniper, use SMG and Cleaner's Carbine.",
+        "tags": ["any_map", "sniper", "loadout"]
+    },
+    {
+        "name": "Slow and Steady",
+        "desc": "Crouch the whole time, no jumping.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Medic Main Aim",
+        "desc": "Medics can only heal with crossbows.",
+        "tags": ["any_map", "medic"]
+    },
+    {
+        "name": "Deaf and Dumb",
+        "desc": "Mute the game audio and invert the mouse y-axis.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Sticky Situation",
+        "desc": "Everyone Demoman, using two stickies to jump.",
+        "tags": ["any_map", "demoman"]
+    },
+    {
+        "name": "Invisible Army",
+        "desc": "Everyone Spy. Everyone use the Cloak and Dagger and hide on the control point.",
+        "tags": ["any_map", "spy", "loadout"]
+    },
+    {
+        "name": "Air Control",
+        "desc": "One person Soldier, everyone else Medic. Medics use the Quick-Fix and heal the Soldier.",
+        "tags": ["any_map", "soldier", "medic", "loadout"]
+    },
+    {
+        "name": "And my Favorite Class is the Spy",
+        "desc": "Everyone Spy, trickstabs only.",
+        "tags": ["any_map", "spy"]
+    },
+    {
+        "name": "Heavy Ammunition",
+        "desc": "Everyone Heavy using Brass Beast. No spinning down.",
+        "tags": ["any_map", "heavy", "loadout"]
+    },
+    {
+        "name": "Urine Trouble",
+        "desc": "Everyone Sniper. Use Sydney Sleeper, Jarate and Bushwacka.",
+        "tags": ["any_map", "sniper"]
+    },
+    {
+        "name": "Unlimited",
+        "desc": "Half the team medic, half the team engineer. Use Kritzkrieg and Widowmaker only.",
+        "tags": ["any_map", "engineer", "medic", "loadout"]
+    },
+    {
+        "name": "Steak and Bake",
+        "desc": "Everyone Heavy, using Steak, KGB and Brass Beast. Only use the Brass Beast with KGB crits.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "No Going Back",
+        "desc": "Unbind your backwards keys.",
+        "tags": ["any_map", "unbind"]
+    },
+    {
+        "name": "Super Soaker",
+        "desc": "Only kill enemies soaked in Jarate or Mad Milk.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Cheers, Love!",
+        "desc": "Everyone Scout, only use pistols.",
+        "tags": ["any_map", "scout"]
+    },
+    {
+        "name": "Uberchain",
+        "desc": "Everyone Medic. Do a Medic chain with ubersaws.",
+        "tags": ["any_map", "medic", "loadout"]
+    },
+    {
+        "name": "Tunnelvision",
+        "desc": "Shrink your FOV to 20.",
+        "tags": ["any_map", "fov"]
+    },
+    {
+        "name": "Stretch Armstrong",
+        "desc": "Increase your FOV to 130.",
+        "tags": ["any_map", "fov"]
+    },
+    {
+        "name": "Arrows",
+        "desc": "Rebind your movement keys to the arrow keys.",
+        "tags": ["any_map", "rebind"]
+    },
+    {
+        "name": "300",
+        "desc": "Everyone Sniper, Huntsman only. Synchronise your firing.",
+        "tags": ["any_map", "sniper", "loadout"]
+    },
+    {
+        "name": "Anti-Sixes",
+        "desc": "Do not use any 6s classes. Even Medic.",
+        "tags": ["any_map"]
+    },
+    {
+        "name": "Rift",
+        "desc": "Half the team Scout using Sun-on-a-Stick, hald the team Pyro using Sharpened Volcano Fragment.",
+        "tags": ["any_map", "scout", "pyro", "loadout"]
+    },
+    {
+        "name": "Scattered Backs",
+        "desc": "Everyone Scout, using Bonk, Back Scatter and Boston Basher.",
+        "tags": ["any_map", "scout", "loadout"]
+    },
+    {
+        "name": "1001 Demoknights",
+        "desc": "Everyone Demoman using Ali Baba Wee Booties, Splendid Screen and Persian Persuader.",
+        "tags": ["any_map", "sniper"]
     }
 ]
