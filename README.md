@@ -1,7 +1,8 @@
 # StratRoulette.tf
 
-Source code for StratRoulette.tf, a TF2 version of StratRoulette.com. This was
-written as an experiment PureScript and Functional Reactive Programming.
+Source code for [StratRoulette.tf](https://stratroulette.tf), a TF2 version of
+StratRoulette.com. This was written as an experiment PureScript and Functional
+Reactive Programming.
 
 ## Install
 ```
