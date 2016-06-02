@@ -366,7 +366,7 @@
     },
     {
         "name": "No Going Back",
-        "desc": "Unbind your backwards keys.",
+        "desc": "Unbind your backwards key.",
         "tags": ["any_map", "unbind"]
     },
     {
@@ -401,7 +401,7 @@
     },
     {
         "name": "300",
-        "desc": "Everyone Sniper, Huntsman only. Synchronise your firing.",
+        "desc": "Everyone Sniper, Huntsman only. Synchronize your firing.",
         "tags": ["any_map", "sniper", "loadout"]
     },
     {
@@ -411,7 +411,7 @@
     },
     {
         "name": "Rift",
-        "desc": "Half the team Scout using Sun-on-a-Stick, hald the team Pyro using Sharpened Volcano Fragment.",
+        "desc": "Half the team Scout using Sun-on-a-Stick, half the team Pyro using Sharpened Volcano Fragment.",
         "tags": ["any_map", "scout", "pyro", "loadout"]
     },
     {
