@@ -579,5 +579,30 @@
         "name": "DUI",
         "desc": "Half of the Team as Demo, using the Sticky Jumper and Caber, the other Half as Medic with the Quick Fix.",
         "tags": ["any_map", "Demoman", "Medic", "Loadout"],
+    },
+    {
+        "name": "Bunny",
+        "desc": "Everytime you jump in game, jump in real life.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Demo Review",
+        "desc": "When you kill someone or you die, helpfully point out in chat what they could have done better.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Critical Mass",
+        "desc": "Everyone Scout using Backscatter, Crit-a-Cola and Fan-o-War.",
+        "tags": ["any_map", "scout", "loadout"],
+    },
+    {
+        "name": "Genji",
+        "desc": "Everyone Soldier or Demoman, only use Half-Zatoichi.",
+        "tags": ["any_map", "demoman", "soldier", "loadout"],
+    },
+    {
+        "name": "Critical Mass",
+        "desc": "Everyone Scout using Backscatter, Crit-a-Cola and Fan-o-War.",
+        "tags": ["any_map", "scout", "loadout"],
     }
 ]
