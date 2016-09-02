@@ -1,5 +1,5 @@
 all:
-	pulp build --to static/public/main.js
+	elm make src/Main.elm --output=static/public/main.js
 
 deploy: min
 	appcfg.py update static

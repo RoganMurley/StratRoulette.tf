@@ -22,16 +22,6 @@ body{
     overflow: hidden;
 }
 
-/*
-body {
-    background-image: url('img/badlands.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    overflow: hidden;
-}
-*/
-
 .outer {
     display: table;
     position: absolute;
@@ -61,11 +51,10 @@ h1 {
     margin-bottom: 20px;
 }
 
-#output {
+#app {
     color: #fff;
     font-family: 'TF2 Build', Arial, sans-serif;
     font-size: 2em;
-    /*height: 130px;*/
 }
 
 .flare-input-button {

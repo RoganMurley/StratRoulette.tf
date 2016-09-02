@@ -13,7 +13,7 @@ Requires `npm` and `bower`.
 
 ## Build
 ```
-make build
+make
 ```
 
 ## Development
