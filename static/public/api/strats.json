@@ -423,5 +423,161 @@
         "name": "1001 Demoknights",
         "desc": "Everyone Demoman using Ali Baba Wee Booties, Splendid Screen and Persian Persuader.",
         "tags": ["any_map", "sniper"]
+    },
+    {
+        "name": "Direct",
+        "desc": "Everyone Soldier or Demoman using Direct Hit or Loch-n-Load.",
+        "tags": ["any_map", "soldier", "demoman", "loadout"],
+    },
+    {
+        "name": "Crutch Party",
+        "desc": "Everyone Scout or Sniper using Sydney-Sleeper or Crit-a-Cola.",
+        "tags": ["any_map", "scout", "sniper", "loadout"],
+    },
+    {
+        "name": "Tag",
+        "desc": "You must melee someone before shooting them.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Dance Like No One's Shooting At US",
+        "desc": "Rollout using moveable taunts.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Scout's Honor",
+        "desc": "Everyone Scout, only play objectives and do not hurt the enemy.",
+        "tags": ["any_map", "scout"],
+    },
+    {
+        "name": "Appraisal",
+        "desc": "After killing an enemy, approach their corpse and say how much their loadout is worth in chat.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Dubstep",
+        "desc": "Everyone medic, killbind any time you get 100% charge.",
+        "tags": ["any_map", "medic"],
+    },
+    {
+        "name": "2007scape",
+        "desc": "Vanilla loadouts.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Schadenfreude",
+        "desc": "Taunt every time a teammate dies.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "i58",
+        "desc": "One player is the 'Kaidus'. He sits in spec and tells others what to do.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Calcium",
+        "desc": "Everyone Scout, co-ordinate throwing Mad Milk at a single player all at once.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Reversal",
+        "desc": "Bind your forward and backward movement keys to backward and forward respectively.",
+        "tags": ["any_map", "bind"],
+    },
+    {
+        "name": "Major League Gamer",
+        "desc": "Everyone Sniper, noscopes only.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Flock of Eagles",
+        "desc": "Everyone Soldier, rocket jump around together.",
+        "tags": ["any_map", "soldier"],
+    },
+    {
+        "name": "An Elegant Weapon",
+        "desc": "Batsaber only.",
+        "tags": ["any_map"],
+    },
+    ,
+    {
+        "name": "Russian Blood",
+        "desc": "Your team must share a single weapon, picking it up after teammates die.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Mcree",
+        "desc": "Everyone Spy, everyone Ambassador.",
+        "tags": ["any_map", "spy"],
+    },
+    {
+        "name": "Moonwalker",
+        "desc": "Unbind all movement keys except your backwards movement key.",
+        "tags": ["any_map", "unbind", "bind"],
+    },
+    {
+        "name": "Allergic Reation",
+        "desc": "Spam your medic key, but killbind if you are healed by a Medic.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Ambulophobia",
+        "desc": "Hold down crouch the entire game.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Self Hatred",
+        "desc": "Focus players playing the same class as you exclusively.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Kleptomania",
+        "desc": "Take health packs, ammo boxes and dropped weapons whenever possible.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Why not Crab People?",
+        "desc": "Unbind your backwards and forwards movement keys.",
+        "tags": ["any_map", "bind", "unbind"],
+    },
+    {
+        "name": "Verbophobia",
+        "desc": "Rebind all of your voice and commands to killbind.",
+        "tags": ["any_map", "bind", "unbind"],
+    },
+    {
+        "name": "Sneaky Fatty",
+        "desc": "Everyone Heavy, everyone Tomislav. Keep your gun spun up at all times.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Fingered",
+        "desc": "Switch your m1 and m2 binds.",
+        "tags": ["any_map", "bind"],
+    },
+    {
+        "name": "Consult a Doctor",
+        "desc": "Everyone Spy, everyone spycrab. When the time is right, strike.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Divorced",
+        "desc": "Everyone Heavy, nobody use miniguns.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Crusader Mentality",
+        "desc": "Everyone Medic, Crusader's Crossbow only.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "Born and Raised",
+        "desc": "During any match, try to get into a intelligent conversation, and when you do, repeatedly quote the Bel air Theme.",
+        "tags": ["any_map"],
+    },
+    {
+        "name": "DUI",
+        "desc": "Half of the Team as Demo, using the Sticky Jumper and Caber, the other Half as Medic with the Quick Fix.",
+        "tags": ["any_map", "Demoman", "Medic", "Loadout"],
     }
 ]
