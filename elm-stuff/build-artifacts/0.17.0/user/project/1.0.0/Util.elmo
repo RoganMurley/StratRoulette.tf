@@ -1,0 +1,14 @@
+var _user$project$Util$fromJust = function (m) {
+	var _p0 = m;
+	if (_p0.ctor === 'Just') {
+		return _p0._0;
+	} else {
+		return _elm_lang$core$Native_Utils.crashCase(
+			'Util',
+			{
+				start: {line: 7, column: 3},
+				end: {line: 11, column: 55}
+			},
+			_p0)('Used fromJust on Nothing.');
+	}
+};
