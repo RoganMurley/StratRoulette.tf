@@ -621,5 +621,25 @@ strats =
       name = "Critical Mass",
       desc = "Everyone Scout using Backscatter, Crit-a-Cola and Fan-o-War.",
       tags = ["any_map", "scout", "loadout"]
+    },
+    {
+      name = "Ambidextrous",
+      desc = "Use the mouse with your non-dominant hand.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Penetrator",
+      desc = "Everyone Sniper, everyone Machina. Only fire with a fully-charged shot.",
+      tags = ["any_map", "sniper", "loadout"]
+    },
+    {
+      name = "Deadly Duck",
+      desc = "Bind crouch key to killbind.",
+      tags = ["any_map", "bind"]
+    },
+    {
+      name = "Worst Case Scenario",
+      desc = "Everyone Spy, only disguise as Heavy.",
+      tags = ["any_map", "spy"]
     }
   ])
