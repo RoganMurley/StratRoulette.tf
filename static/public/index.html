@@ -26,7 +26,7 @@
         </div>
         <script src="main.js"></script>
         <script>
-            const initialLocation = window.location.search.substring(1).slice(0, -1);
+            const initialLocation = window.location.search.substring(1).replace("/","");
             const host = document.getElementById("app");
             const app = Elm.Main.embed(host, initialLocation);
 
