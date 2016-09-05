@@ -5,14 +5,25 @@ var _user$project$Main$Active = function (a) {
 	return {ctor: 'Active', _0: a};
 };
 var _user$project$Main$Start = {ctor: 'Start'};
-var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$Start, _1: _elm_lang$core$Platform_Cmd$none};
+var _user$project$Main$init = function (stratSlug) {
+	var _p0 = _user$project$Strats$getStrat(stratSlug);
+	if (_p0.ctor === 'Just') {
+		return {
+			ctor: '_Tuple2',
+			_0: _user$project$Main$Active(_p0._0),
+			_1: _elm_lang$core$Platform_Cmd$none
+		};
+	} else {
+		return {ctor: '_Tuple2', _0: _user$project$Main$Start, _1: _elm_lang$core$Platform_Cmd$none};
+	}
+};
 var _user$project$Main$Set = function (a) {
 	return {ctor: 'Set', _0: a};
 };
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		var _p0 = msg;
-		if (_p0.ctor === 'Roll') {
+		var _p1 = msg;
+		if (_p1.ctor === 'Roll') {
 			return {
 				ctor: '_Tuple2',
 				_0: model,
@@ -22,17 +33,19 @@ var _user$project$Main$update = F2(
 					_mgold$elm_nonempty_list$List_Nonempty$sample(_user$project$Strats$strats))
 			};
 		} else {
+			var _p2 = _p1._0;
 			return {
 				ctor: '_Tuple2',
-				_0: _user$project$Main$Active(_p0._0),
-				_1: _elm_lang$core$Platform_Cmd$none
+				_0: _user$project$Main$Active(_p2),
+				_1: _user$project$Location$location(
+					_user$project$Strats$slug(_p2))
 			};
 		}
 	});
 var _user$project$Main$Roll = {ctor: 'Roll'};
 var _user$project$Main$view = function (model) {
-	var _p1 = model;
-	if (_p1.ctor === 'Start') {
+	var _p3 = model;
+	if (_p3.ctor === 'Start') {
 		return A2(
 			_elm_lang$html$Html$div,
 			_elm_lang$core$Native_List.fromArray(
@@ -82,7 +95,7 @@ var _user$project$Main$view = function (model) {
 						]))
 				]));
 	} else {
-		var _p2 = _p1._0;
+		var _p4 = _p3._0;
 		return A2(
 			_elm_lang$html$Html$div,
 			_elm_lang$core$Native_List.fromArray(
@@ -101,7 +114,7 @@ var _user$project$Main$view = function (model) {
 								[]),
 							_elm_lang$core$Native_List.fromArray(
 								[
-									_elm_lang$html$Html$text(_p2.name)
+									_elm_lang$html$Html$text(_p4.name)
 								])),
 							A2(
 							_elm_lang$html$Html$div,
@@ -109,7 +122,7 @@ var _user$project$Main$view = function (model) {
 								[]),
 							_elm_lang$core$Native_List.fromArray(
 								[
-									_elm_lang$html$Html$text(_p2.desc)
+									_elm_lang$html$Html$text(_p4.desc)
 								]))
 						])),
 					A2(
@@ -134,6 +147,7 @@ var _user$project$Main$view = function (model) {
 	}
 };
 var _user$project$Main$main = {
-	main: _elm_lang$html$Html_App$program(
-		{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})
+	main: _elm_lang$html$Html_App$programWithFlags(
+		{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions}),
+	flags: _elm_lang$core$Json_Decode$string
 };

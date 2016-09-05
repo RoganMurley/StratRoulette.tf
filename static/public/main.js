@@ -9170,6 +9170,12 @@ var _mgold$elm_nonempty_list$List_Nonempty$scanl1 = F2(
 		}
 	});
 
+var _user$project$Location$location = _elm_lang$core$Native_Platform.outgoingPort(
+	'location',
+	function (v) {
+		return v;
+	});
+
 var _user$project$Util$fromJust = function (m) {
 	var _p0 = m;
 	if (_p0.ctor === 'Just') {
@@ -9914,8 +9920,51 @@ var _user$project$Strats$strats = _user$project$Util$fromJust(
 				desc: 'Everyone Scout using Backscatter, Crit-a-Cola and Fan-o-War.',
 				tags: _elm_lang$core$Native_List.fromArray(
 					['any_map', 'scout', 'loadout'])
+			},
+				{
+				name: 'Ambidextrous',
+				desc: 'Use the mouse with your non-dominant hand.',
+				tags: _elm_lang$core$Native_List.fromArray(
+					['any_map'])
+			},
+				{
+				name: 'Penetrator',
+				desc: 'Everyone Sniper, everyone Machina. Only fire with a fully-charged shot.',
+				tags: _elm_lang$core$Native_List.fromArray(
+					['any_map', 'sniper', 'loadout'])
+			},
+				{
+				name: 'Deadly Duck',
+				desc: 'Bind crouch key to killbind.',
+				tags: _elm_lang$core$Native_List.fromArray(
+					['any_map', 'bind'])
+			},
+				{
+				name: 'Worst Case Scenario',
+				desc: 'Everyone Spy, only disguise as Heavy.',
+				tags: _elm_lang$core$Native_List.fromArray(
+					['any_map', 'spy'])
 			}
 			])));
+var _user$project$Strats$slug = function (_p0) {
+	var _p1 = _p0;
+	return A2(
+		_elm_lang$core$String$join,
+		'_',
+		_elm_lang$core$String$words(
+			_elm_lang$core$String$toLower(_p1.name)));
+};
+var _user$project$Strats$getStrat = function (s) {
+	return _elm_lang$core$List$head(
+		A2(
+			_elm_lang$core$List$filter,
+			function (x) {
+				return _elm_lang$core$Native_Utils.eq(
+					_user$project$Strats$slug(x),
+					s);
+			},
+			_mgold$elm_nonempty_list$List_Nonempty$toList(_user$project$Strats$strats)));
+};
 var _user$project$Strats$Strat = F3(
 	function (a, b, c) {
 		return {name: a, desc: b, tags: c};
@@ -9928,14 +9977,25 @@ var _user$project$Main$Active = function (a) {
 	return {ctor: 'Active', _0: a};
 };
 var _user$project$Main$Start = {ctor: 'Start'};
-var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$Start, _1: _elm_lang$core$Platform_Cmd$none};
+var _user$project$Main$init = function (stratSlug) {
+	var _p0 = _user$project$Strats$getStrat(stratSlug);
+	if (_p0.ctor === 'Just') {
+		return {
+			ctor: '_Tuple2',
+			_0: _user$project$Main$Active(_p0._0),
+			_1: _elm_lang$core$Platform_Cmd$none
+		};
+	} else {
+		return {ctor: '_Tuple2', _0: _user$project$Main$Start, _1: _elm_lang$core$Platform_Cmd$none};
+	}
+};
 var _user$project$Main$Set = function (a) {
 	return {ctor: 'Set', _0: a};
 };
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		var _p0 = msg;
-		if (_p0.ctor === 'Roll') {
+		var _p1 = msg;
+		if (_p1.ctor === 'Roll') {
 			return {
 				ctor: '_Tuple2',
 				_0: model,
@@ -9945,17 +10005,19 @@ var _user$project$Main$update = F2(
 					_mgold$elm_nonempty_list$List_Nonempty$sample(_user$project$Strats$strats))
 			};
 		} else {
+			var _p2 = _p1._0;
 			return {
 				ctor: '_Tuple2',
-				_0: _user$project$Main$Active(_p0._0),
-				_1: _elm_lang$core$Platform_Cmd$none
+				_0: _user$project$Main$Active(_p2),
+				_1: _user$project$Location$location(
+					_user$project$Strats$slug(_p2))
 			};
 		}
 	});
 var _user$project$Main$Roll = {ctor: 'Roll'};
 var _user$project$Main$view = function (model) {
-	var _p1 = model;
-	if (_p1.ctor === 'Start') {
+	var _p3 = model;
+	if (_p3.ctor === 'Start') {
 		return A2(
 			_elm_lang$html$Html$div,
 			_elm_lang$core$Native_List.fromArray(
@@ -10005,7 +10067,7 @@ var _user$project$Main$view = function (model) {
 						]))
 				]));
 	} else {
-		var _p2 = _p1._0;
+		var _p4 = _p3._0;
 		return A2(
 			_elm_lang$html$Html$div,
 			_elm_lang$core$Native_List.fromArray(
@@ -10024,7 +10086,7 @@ var _user$project$Main$view = function (model) {
 								[]),
 							_elm_lang$core$Native_List.fromArray(
 								[
-									_elm_lang$html$Html$text(_p2.name)
+									_elm_lang$html$Html$text(_p4.name)
 								])),
 							A2(
 							_elm_lang$html$Html$div,
@@ -10032,7 +10094,7 @@ var _user$project$Main$view = function (model) {
 								[]),
 							_elm_lang$core$Native_List.fromArray(
 								[
-									_elm_lang$html$Html$text(_p2.desc)
+									_elm_lang$html$Html$text(_p4.desc)
 								]))
 						])),
 					A2(
@@ -10057,8 +10119,9 @@ var _user$project$Main$view = function (model) {
 	}
 };
 var _user$project$Main$main = {
-	main: _elm_lang$html$Html_App$program(
-		{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})
+	main: _elm_lang$html$Html_App$programWithFlags(
+		{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions}),
+	flags: _elm_lang$core$Json_Decode$string
 };
 
 var Elm = {};

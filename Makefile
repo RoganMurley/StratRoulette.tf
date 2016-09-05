@@ -1,14 +1,9 @@
 all:
 	elm make src/Main.elm --output=static/public/main.js
+	cp static/public/src.css static/public/main.css
 
 deploy: min
 	appcfg.py update static
-
-dev: min
-
-install:
-	npm install
-	bower install
 
 min:
 	uglifyjs static/public/main.js --compress --mangle -o static/public/main.js

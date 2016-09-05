@@ -1,16 +1,19 @@
+module Main exposing (..)
+
 import Html exposing (button, div, h1, text, Html)
-import Html.App exposing (program)
+import Html.App exposing (programWithFlags)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Random exposing (generate)
 
 import List.Nonempty as Nonempty
 
-import Strats exposing (strats, Strat)
+import Location exposing (..)
+import Strats exposing (getStrat, slug, strats, Strat)
 
 
 main =
-  program {
+  programWithFlags {
     init = init,
     view = view,
     update = update,
@@ -23,8 +26,13 @@ main =
 type Model = Start | Active Strat
 
 
-init : (Model, Cmd Msg)
-init = (Start, Cmd.none)
+init : String -> (Model, Cmd Msg)
+init stratSlug =
+  case getStrat stratSlug of
+    Just strat ->
+      (Active strat, Cmd.none)
+    Nothing ->
+      (Start, Cmd.none)
 
 
 
@@ -40,7 +48,7 @@ update msg model =
       (model, generate Set (Nonempty.sample strats))
 
     Set strat ->
-      (Active strat, Cmd.none)
+      (Active strat, location (slug strat))
 
 
 

@@ -1,5 +1,7 @@
 module Strats exposing (..)
 
+import String exposing (join, toLower, words)
+
 import List.Nonempty as Nonempty
 
 import Util exposing (fromJust)
@@ -12,6 +14,13 @@ type alias Strat =
     desc : String,
     tags : List String
   }
+
+
+slug : Strat -> String
+slug { name } = join "_" (words (toLower name))
+
+getStrat : String -> Maybe Strat
+getStrat s = List.head (List.filter (\x -> slug x == s) (Nonempty.toList strats))
 
 
 strats : Nonempty.Nonempty Strat
