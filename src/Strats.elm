@@ -17,7 +17,11 @@ type alias Strat =
 
 
 slug : Strat -> String
-slug { name } = join "_" (words (toLower name))
+slug { name } =
+  let
+    validChar x = List.member x (String.toList "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")
+  in
+    join "_" (words (String.filter validChar (toLower name)))
 
 getStrat : String -> Maybe Strat
 getStrat s = List.head (List.filter (\x -> slug x == s) (Nonempty.toList strats))
