@@ -650,5 +650,15 @@ strats =
       name = "Worst Case Scenario",
       desc = "Everyone Spy, only disguise as Heavy.",
       tags = ["any_map", "spy"]
+    },
+    {
+      name = "Golden Sniper",
+      desc = "Everyone Sniper, only kill players soaked in Jarate.",
+      tags = ["any_map", "sniper", "loadout"]
+    },
+    {
+      name = "Tarantino",
+      desc = "Control the mouse with your foot.",
+      tags = ["any_map"]
     }
   ])

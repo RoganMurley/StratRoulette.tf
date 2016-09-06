@@ -751,6 +751,18 @@ var _user$project$Strats$strats = _user$project$Util$fromJust(
 				desc: 'Everyone Spy, only disguise as Heavy.',
 				tags: _elm_lang$core$Native_List.fromArray(
 					['any_map', 'spy'])
+			},
+				{
+				name: 'Golden Sniper',
+				desc: 'Everyone Sniper, only kill players soaked in Jarate.',
+				tags: _elm_lang$core$Native_List.fromArray(
+					['any_map', 'sniper', 'loadout'])
+			},
+				{
+				name: 'Tarantino',
+				desc: 'Control the mouse with your foot.',
+				tags: _elm_lang$core$Native_List.fromArray(
+					['any_map'])
 			}
 			])));
 var _user$project$Strats$slug = function (_p0) {
