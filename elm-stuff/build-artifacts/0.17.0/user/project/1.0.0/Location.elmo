@@ -1,5 +1,0 @@
-var _user$project$Location$location = _elm_lang$core$Native_Platform.outgoingPort(
-	'location',
-	function (v) {
-		return v;
-	});
