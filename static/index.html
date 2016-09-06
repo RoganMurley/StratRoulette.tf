@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Strat Roulette</title>
-        <link href="main.css" rel="stylesheet">
+        <link href="static/main.css" rel="stylesheet">
         <link rel="icon" href="img/favicon.ico">
     </head>
     <body>
@@ -24,14 +24,14 @@
                 <input class="suggest-button" type="submit" value="Suggest">
             </form>
         </div>
-        <script src="main.js"></script>
+        <script src="static/main.js"></script>
         <script>
-            const initialLocation = window.location.search.substring(1).replace("/","");
+            const initialLocation = window.location.pathname.replace("/","");
             const host = document.getElementById("app");
             const app = Elm.Main.embed(host, initialLocation);
 
             app.ports.location.subscribe(function (newValue) {
-                history.replaceState({}, "", "?" + newValue);
+                history.replaceState({}, "", newValue);
             })
         </script>
         <script>

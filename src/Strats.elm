@@ -19,7 +19,7 @@ type alias Strat =
 slug : Strat -> String
 slug { name } =
   let
-    validChar x = List.member x (String.toList "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")
+    validChar x = List.member x (String.toList "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")
   in
     join "_" (words (String.filter validChar (toLower name)))
 

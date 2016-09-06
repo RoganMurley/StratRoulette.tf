@@ -11,15 +11,20 @@
     static_files: public/img/favicon.ico
     upload: public/img/favicon.ico
 
-  - url: /(.+)
+  - url: /static/(.+)
     secure: optional
     static_files: public/\1
     upload: public/(.*)
 
   - url: /
     secure: optional
-    static_files: public/index.html
-    upload: public/index.html
+    static_files: index.html
+    upload: index.html
+
+  - url: /(.+)
+    secure: optional
+    static_files: index.html
+    upload: index.html
 
   skip_files:
   - ^(.*/)?app\.yaml
