@@ -8,7 +8,7 @@ import Random exposing (generate)
 
 import List.Nonempty as Nonempty
 
-import Location exposing (..)
+import Ports exposing (location, analyticsEvent)
 import Strats exposing (getStrat, slug, strats, Strat)
 
 
@@ -48,7 +48,10 @@ update msg model =
       (model, generate Set (Nonempty.sample strats))
 
     Set strat ->
-      (Active strat, location (slug strat))
+      let
+        mySlug = slug strat
+      in
+        (Active strat, Cmd.batch([location mySlug, analyticsEvent ("roulette", "roll", mySlug)]))
 
 
 
