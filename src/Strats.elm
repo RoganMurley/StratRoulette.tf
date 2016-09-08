@@ -664,5 +664,25 @@ strats =
       name = "Tarantino",
       desc = "Control the mouse with your foot.",
       tags = ["any_map"]
+    },
+    {
+      name = "Team Fortress",
+      desc = "Everyone Engineer, build a fort out of dispensers.",
+      tags = ["any_map", "engineer"]
+    },
+    {
+      name = "Planned Accidents",
+      desc = "Kill enemies only with environmental hazards.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Shark Infested Waters",
+      desc = "Everyone Pyro, everyone Neon Annihilator, hide in the water.",
+      tags = ["any_map", "pyro", "loadout"]
+    },
+    {
+      name = "Dead Man Walking",
+      desc = "Everyone Spy, everyone Your Eternal Reward and Dead Ringer.",
+      tags = ["any_map", "spy", "loadout"]
     }
   ])
