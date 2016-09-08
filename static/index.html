@@ -37,12 +37,12 @@
             app.ports.analyticsEvent.subscribe(function (details) {
               const category = details[0];
               const action = details[1];
-              const value = details[2];
+              const label = details[2];
               ga('send', {
                 hitType: 'event',
                 eventCategory: category,
                 eventAction: action,
-                eventValue: value
+                eventLabel: label
               });
             })
         </script>
