@@ -23,6 +23,7 @@ slug { name } =
   in
     join "_" (words (String.filter validChar (toLower name)))
 
+
 getStrat : String -> Maybe Strat
 getStrat s = List.head (List.filter (\x -> slug x == s) (Nonempty.toList strats))
 
