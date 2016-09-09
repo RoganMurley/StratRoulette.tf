@@ -685,5 +685,10 @@ strats =
       name = "Dead Man Walking",
       desc = "Everyone Spy, everyone Your Eternal Reward and Dead Ringer.",
       tags = ["any_map", "spy", "loadout"]
+    },
+    {
+      name = "Wasted WASD",
+      desc = "Bind all movement keys except jump and crouch to killbind. Explosive jump around.",
+      tags = ["any_map", "bind"]
     }
   ])
