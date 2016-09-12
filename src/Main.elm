@@ -54,17 +54,20 @@ update msg model =
 
     Set strat ->
       let
-        mySlug = slug strat
+        stratSlug = slug strat
         batch = Cmd.batch([
-          location mySlug,
-          analyticsEvent ("roulette", "roll", mySlug)
+          location stratSlug,
+          analyticsEvent ("roulette", "roll", stratSlug)
         ])
+        dropStrat = removeStrat stratSlug
       in
         case model of
+
           Start ->
-            (Active { strat = strat, remaining = removeStrat mySlug strats }, batch)
+            (Active { strat = strat, remaining = dropStrat strats }, batch)
+
           Active { remaining } ->
-            (Active { strat = strat, remaining = removeStrat mySlug remaining }, batch)
+            (Active { strat = strat, remaining = dropStrat remaining }, batch)
 
 
 
