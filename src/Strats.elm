@@ -684,5 +684,140 @@ strats =
       name = "Dead Man Walking",
       desc = "Everyone Spy, everyone Your Eternal Reward and Dead Ringer.",
       tags = ["any_map", "spy", "loadout"]
+    },
+    {
+      name = "Your Biggest Fan",
+      desc = "Everyone Scout, everyone Fan o' War. Swarm one player constantly.",
+      tags = ["any_map", "scout", "loadout"]
+    },
+    {
+      name = "Medical Musician",
+      desc = "Play Medic, heal only with the Amputator.",
+      tags = ["any_map", "medic", "loadout"]
+    },
+    {
+      name = "Uber Train",
+      desc = "Everyone Medic, Ubersaw and Medigun only.",
+      tags = ["any_map", "medic", "loadout"]
+    },
+    {
+      name = "Revengineering",
+      desc = "Everyone Medic and Engineer. Use Kritzkrieg and Widowmaker.",
+      tags = ["any_map", "engineer", "medic", "loadout"]
+    },
+    {
+      name = "mge me irl",
+      desc = "cl_first_person_uses_world_model 1",
+      tags = ["any_map", "console"]
+    },
+    {
+      name = "Tank",
+      desc = "Everyone Medic and Heavy. Use the Vaccinator and Fists of Steel to sponge as much damage as possible.",
+      tags = ["any_map", "heavy", "medic", "loadout"]
+    },
+    {
+      name = "Must be OP",
+      desc = "Whenever you die, switch to the class that killed you.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Like ster_ only different",
+      desc = "Bind your forward movement key to killbind.",
+      tags = ["any_map", "bind"]
+    },
+    {
+      name = "Bastion",
+      desc = "Everyone Heavy. Use Brass Beast, crouch and don't move.",
+      tags = ["any_map", "heavy"]
+    },
+    {
+      name = "Cyclone",
+      desc = "+left in console",
+      tags = ["any_map", "console"]
+    },
+    {
+      name = "Bushido",
+      desc = "Everyone Soldier or Demoman. Everyone Half-Zatoichi only.",
+      tags = ["any_map", "demoman", "soldier", "loadout"]
+    },
+    {
+      name = "Drop Dead and Give Me 20!",
+      desc = "When you die do 20 pushups.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Pathfinding",
+      desc = "Never take the same route twice.",
+      tags = ["any_map"]
+    },
+    {
+      name = "The Floor is Lava",
+      desc = "Stand on props, don't touch the floor. Because it's lava!",
+      tags = ["any_map"]
+    },
+    {
+      name = "Hard for Some",
+      desc = "Killbind your taunt button for one whole week.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Hearing Things",
+      desc = "Wear your headphones backwards.",
+      tags = ["any_map", "periphiel"]
+    },
+    {
+      name = "OSU! is practice right?",
+      desc = "Play using a graphics tablet, listening to anime music.",
+      tags = ["any_map", "periphiel", "music"]
+    },
+    {
+      name = "I'm walking 'ere!'",
+      desc = "Everyone Scout, everyone Shortstop. Push enemies as much as possible!",
+      tags = ["any_map", "scout", "loadout"]
+    },
+    {
+      name = "Dodgeball",
+      desc = "Just don't get hit.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Actual Loadouts",
+      desc = "Use actual in game loadouts, like the Tankbuster.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Silver Tongue",
+      desc = "Talk the server into votekicking your buddy.",
+      tags = ["any_map"]
+    },
+    {
+      name = "i5X",
+      desc = "Tryhard like you've never tried before!",
+      tags = ["any_map"]
+    },
+    {
+      name = "The Array7",
+      desc = "Use Array7's loadouts.",
+      tags = ["any_map"]
+    },
+    {
+      name = "The Uncle",
+      desc = "Use Uncle Dane's loadouts.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Tracer",
+      desc = "Everyone Scout, Pistol only.",
+      tags = ["any_map", "scout", "loadout"]
+    },
+    {
+      name = "Slenderclass",
+      desc = "Only move when the enemy is not looking.",
+      tags = ["any_map"]
+    },
+    {
+      name = "Schmolt",
+      desc = "Go Medic and keep dropping uber. When called out on it, claim that you meant to do it.",
+      tags = ["any_map", "medic"]
     }
   ])
