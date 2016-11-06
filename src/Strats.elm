@@ -23,8 +23,21 @@ slug { name } =
   in
     join "_" (words (String.filter validChar (toLower name)))
 
-getStrat : String -> Maybe Strat
-getStrat s = List.head (List.filter (\x -> slug x == s) (Nonempty.toList strats))
+
+getStrat : String -> Nonempty.Nonempty Strat -> Maybe Strat
+getStrat s xs = List.head (List.filter (\x -> slug x == s) (Nonempty.toList xs))
+
+
+removeStrat : String -> Nonempty.Nonempty Strat -> Nonempty.Nonempty Strat
+removeStrat s xs =
+  let
+    remaining = Nonempty.fromList (List.filter (\x -> slug x /= s) (Nonempty.toList xs))
+  in
+    case remaining of
+      Just r ->
+        r
+      Nothing ->
+        strats
 
 
 strats : Nonempty.Nonempty Strat

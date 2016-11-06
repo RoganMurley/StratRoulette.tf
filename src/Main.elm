@@ -9,7 +9,7 @@ import Random exposing (generate)
 import List.Nonempty as Nonempty
 
 import Ports exposing (location, analyticsEvent)
-import Strats exposing (getStrat, slug, strats, Strat)
+import Strats exposing (getStrat, removeStrat, slug, strats, Strat)
 
 
 main =
@@ -23,14 +23,19 @@ main =
 
 
 -- MODEL
-type Model = Start | Active Strat
+type Model =
+  Start |
+  Active {
+    strat: Strat,
+    remaining: Nonempty.Nonempty Strat
+  }
 
 
 init : String -> (Model, Cmd Msg)
 init stratSlug =
-  case getStrat stratSlug of
+  case getStrat stratSlug strats of
     Just strat ->
-      (Active strat, Cmd.none)
+      (Active { strat = strat, remaining = removeStrat stratSlug strats }, Cmd.none)
     Nothing ->
       (Start, Cmd.none)
 
@@ -49,9 +54,20 @@ update msg model =
 
     Set strat ->
       let
-        mySlug = slug strat
+        stratSlug = slug strat
+        batch = Cmd.batch([
+          location stratSlug,
+          analyticsEvent ("roulette", "roll", stratSlug)
+        ])
+        dropStrat = removeStrat stratSlug
       in
-        (Active strat, Cmd.batch([location mySlug, analyticsEvent ("roulette", "roll", mySlug)]))
+        case model of
+
+          Start ->
+            (Active { strat = strat, remaining = dropStrat strats }, batch)
+
+          Active { remaining } ->
+            (Active { strat = strat, remaining = dropStrat remaining }, batch)
 
 
 
@@ -71,7 +87,7 @@ view model =
           div [] [ button [ onClick Roll, class "roll-button" ] [ text "Roll" ] ]
         ]
 
-    Active strat ->
+    Active { strat } ->
       div []
         [
           div []
